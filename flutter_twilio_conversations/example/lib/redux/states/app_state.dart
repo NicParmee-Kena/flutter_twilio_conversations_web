@@ -1,4 +1,4 @@
-import 'package:flutter_twilio_conversations/flutter_twilio_conversations.dart';
+import 'package:flutter_twilio_conversations_platform_interface/flutter_twilio_conversations_platform_interface.dart';
 import 'package:flutter_twilio_conversations_example/redux/states/navigation_state.dart';
 import 'package:flutter_twilio_conversations_example/utils/nullable.dart';
 import 'package:flutter_twilio_conversations_example/widgets/conversation_dialog.dart';

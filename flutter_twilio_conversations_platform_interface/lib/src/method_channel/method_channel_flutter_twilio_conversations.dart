@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/services.dart';
 import 'package:meta/meta.dart';
 import '../platform_interface/flutter_twilio_conversations_platform.dart';
-
+import '../types/parts.dart';
 // const MethodChannel _channel =
 //     MethodChannel('plugins.flutter.io/flutter_twilio_conversations');
 
@@ -26,7 +26,7 @@ class MethodChannelFlutterTwilioConversations
   );
 
   @override
-  Future<void> create() {
+  Future<ChatClient?> create(String token, Properties properties) async {
     print('here');
     return _methodChannel.invokeMethod("create");
   }

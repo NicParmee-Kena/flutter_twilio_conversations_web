@@ -1,4 +1,4 @@
-part of flutter_twilio_conversations;
+part of flutter_twilio_conversations_platform_interface;
 
 /// Contains user information.
 ///
@@ -60,10 +60,9 @@ class UserDescriptor {
   }
 
   /// Subscribe to the user object.
-//   Future<User> subscribe() async {
-//     final user = await TwilioConversationsClient.chatClient!.users
-//         ?.getAndSubscribeUser(_identity);
-// return user!;
-
-//   }
+  Future<User> subscribe() async {
+    final user = await TwilioConversationsClient.chatClient!.users
+        ?.getAndSubscribeUser(_identity);
+    return user!;
+  }
 }

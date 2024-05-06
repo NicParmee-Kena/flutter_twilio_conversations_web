@@ -1,4 +1,5 @@
-part of flutter_twilio_conversations;
+part of flutter_twilio_conversations_platform_interface;
+
 
 /// Provides access to channels collection, allows to create new channels.
 class Channels {

@@ -1,4 +1,4 @@
-part of flutter_twilio_conversations;
+part of flutter_twilio_conversations_platform_interface;
 
 class Message {
   //#region Private API properties
@@ -134,11 +134,11 @@ class Message {
 
   //#region Public API methods
   /// Returns the parent channel this message belongs to.
-  // Future<Channel> getChannel() async {
-  //   var channel = await TwilioConversationsClient.chatClient!.channels!
-  //       .getChannel(_channelSid!);
-  //   return channel;
-  // }
+  Future<Channel> getChannel() async {
+    var channel = await TwilioConversationsClient.chatClient!.channels!
+        .getChannel(_channelSid!);
+    return channel;
+  }
 
   /// Updates the body for a message.
   Future<void> updateMessageBody(String body) async {

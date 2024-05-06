@@ -10,7 +10,7 @@ class TwilioConversationsPlugin extends FlutterTwilioConversationsPlatform {
   }
 
   @override
-  Future<void> create() async {
+  Future<ChatClient?> create(String token, Properties properties) async {
     print("here on web");
   }
 }

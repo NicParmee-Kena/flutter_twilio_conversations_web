@@ -3,14 +3,14 @@ import 'package:flutter_twilio_conversations_example/redux/actions/init_actions.
 import 'package:flutter_twilio_conversations_example/redux/actions/messages_actions.dart';
 import 'package:flutter_twilio_conversations_example/redux/actions/ui_actions.dart';
 import 'package:flutter_twilio_conversations_example/redux/states/app_state.dart';
-import 'package:flutter_twilio_conversations/flutter_twilio_conversations.dart';
+import 'package:flutter_twilio_conversations_platform_interface/flutter_twilio_conversations_platform_interface.dart';
 
 class TwilioMiddleware extends EpicMiddleware<AppState> {
   TwilioMiddleware()
       : super(combineEpics([
           _initTwilio(),
-          _sendTextMessage(),
-          _sendImage(),
+     //    _sendTextMessage(),
+       //   _sendImage(),
         ]));
 
   static Epic<AppState> _initTwilio() => TypedEpic((
@@ -22,7 +22,7 @@ class TwilioMiddleware extends EpicMiddleware<AppState> {
               yield UpdateIndicatorsAction(isTwilioInitializing: true);
 
               final chatClient = await TwilioConversationsClient().create(
-                  // action.token, Properties()
+                   action.token, Properties()
                   );
 
               if (chatClient != null) {
@@ -41,52 +41,52 @@ class TwilioMiddleware extends EpicMiddleware<AppState> {
               yield UpdateIndicatorsAction(isTwilioInitializing: false);
             }
           }));
-
-  static Epic<AppState> _sendTextMessage() => TypedEpic((
-        Stream<SendTextMessageAction> stream,
-        EpicStore<AppState> store,
-      ) =>
-          stream.asyncExpand((action) async* {
-            try {
-              final request =
-                  await action.channel.messages?.sendMessage(MessageOptions()
-                    ..withBody(action.text)
-                    ..withAttributes({'customKey': 'customValue'}));
-
-              if (request != null) {
-                print(
-                    'TwilioLog --- message sent to ${action.channel}: ${request.messageBody}');
-              } else {
-                yield ShowToastAction('Failed to send message');
-              }
-            } catch (e) {
-              print('Error while sending message: $e');
-            }
-          }));
-
-  static Epic<AppState> _sendImage() => TypedEpic((
-        Stream<SendImageAction> stream,
-        EpicStore<AppState> store,
-      ) =>
-          stream.asyncExpand((action) async* {
-            try {
-              final request = await action.channel.messages?.sendMessage(
-                MessageOptions()
-                  ..withMedia(
-                    action.image,
-                    action.image.path.toLowerCase().endsWith('heic')
-                        ? 'image/heic'
-                        : 'image/jpeg',
-                  ),
-              );
-
-              if (request != null) {
-                print('TwilioLog --- image sent to ${action.channel}');
-              } else {
-                yield ShowToastAction('Failed to send image');
-              }
-            } catch (e) {
-              print('Error while sending image: $e');
-            }
-          }));
 }
+  // static Epic<AppState> _sendTextMessage() => TypedEpic((
+  //       Stream<SendTextMessageAction> stream,
+  //       EpicStore<AppState> store,
+  //     ) =>
+  //         stream.asyncExpand((action) async* {
+  //           try {
+  //             final request =
+  //                 await action.channel.messages?.sendMessage(MessageOptions()
+  //                   ..withBody(action.text)
+  //                   ..withAttributes({'customKey': 'customValue'}));
+
+  //             if (request != null) {
+  //               print(
+  //                   'TwilioLog --- message sent to ${action.channel}: ${request.messageBody}');
+  //             } else {
+  //               yield ShowToastAction('Failed to send message');
+  //             }
+  //           } catch (e) {
+  //             print('Error while sending message: $e');
+  //           }
+//   //         }));
+
+//   static Epic<AppState> _sendImage() => TypedEpic((
+//         Stream<SendImageAction> stream,
+//         EpicStore<AppState> store,
+//       ) =>
+//           stream.asyncExpand((action) async* {
+//             try {
+//               final request = await action.channel.messages?.sendMessage(
+//                 MessageOptions()
+//                   ..withMedia(
+//                     action.image,
+//                     action.image.path.toLowerCase().endsWith('heic')
+//                         ? 'image/heic'
+//                         : 'image/jpeg',
+//                   ),
+//               );
+
+//               if (request != null) {
+//                 print('TwilioLog --- image sent to ${action.channel}');
+//               } else {
+//                 yield ShowToastAction('Failed to send image');
+//               }
+//             } catch (e) {
+//               print('Error while sending image: $e');
+//             }
+//           }));
+// }

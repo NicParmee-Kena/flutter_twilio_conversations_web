@@ -1,4 +1,4 @@
-part of flutter_twilio_conversations;
+part of flutter_twilio_conversations_platform_interface;
 
 /// Representation of a [Channel] member object.
 class Member {
@@ -76,11 +76,11 @@ class Member {
 
   //#region Public API methods
   /// Returns the channel this member belong<s to.
-  // Future<Channel?> getChannel() async {
-  //   var channel = await TwilioConversationsClient.chatClient?.channels!
-  //       .getChannel(_channelSid!);
-  //   return channel;
-  // }
+  Future<Channel?> getChannel() async {
+    var channel = await TwilioConversationsClient.chatClient?.channels!
+        .getChannel(_channelSid!);
+    return channel;
+  }
 
   /// Return user descriptor for current member.
   Future<UserDescriptor> getUserDescriptor() async {

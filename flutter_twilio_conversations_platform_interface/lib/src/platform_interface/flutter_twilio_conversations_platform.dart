@@ -2,13 +2,17 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+
+
 import 'dart:async';
 
 import 'package:meta/meta.dart' show required;
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
 import '../method_channel/method_channel_flutter_twilio_conversations.dart';
-import '../types/types.dart';
+import '../types/parts.dart';
+
+
 
 /// The interface that implementations of flutter_twilio_conversations must implement.
 ///
@@ -42,7 +46,7 @@ abstract class FlutterTwilioConversationsPlatform extends PlatformInterface {
     _instance = instance;
   }
 
-  Future<void> create(){
+  Future<ChatClient?> create(String token, Properties properties){
      throw UnimplementedError('create() has not been implemented.');
   }
   

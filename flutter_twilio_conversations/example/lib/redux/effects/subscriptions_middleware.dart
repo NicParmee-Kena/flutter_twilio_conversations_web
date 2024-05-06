@@ -6,7 +6,7 @@ import 'package:flutter_twilio_conversations_example/redux/actions/init_actions.
 import 'package:flutter_twilio_conversations_example/redux/actions/messages_actions.dart';
 import 'package:flutter_twilio_conversations_example/redux/actions/ui_actions.dart';
 import 'package:flutter_twilio_conversations_example/redux/states/app_state.dart';
-import 'package:flutter_twilio_conversations/flutter_twilio_conversations.dart';
+import 'package:flutter_twilio_conversations_platform_interface/flutter_twilio_conversations_platform_interface.dart';
 import 'package:flutter_twilio_conversations_example/widgets/conversation_dialog.dart';
 
 class MessengerSubscriptionsMiddleware extends MiddlewareClass<AppState> {

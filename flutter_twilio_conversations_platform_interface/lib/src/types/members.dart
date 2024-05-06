@@ -1,4 +1,4 @@
-part of flutter_twilio_conversations;
+part of flutter_twilio_conversations_platform_interface;
 
 /// Provides access to channel members and allows to add/remove members.
 class Members {
@@ -10,11 +10,11 @@ class Members {
 
   //#region Public API methods
   /// Return channel this member list belongs to.
-  // Future<Channel?> getChannel() async {
-  //   var channel = await TwilioConversationsClient.chatClient?.channels
-  //       ?.getChannel(_channelSid);
-  //   return channel;
-  // }
+  Future<Channel?> getChannel() async {
+    var channel = await TwilioConversationsClient.chatClient?.channels
+        ?.getChannel(_channelSid);
+    return channel;
+  }
 
   Future<List<Member>?> getMembersList() async {
     final membersListData = await TwilioConversationsClient._methodChannel

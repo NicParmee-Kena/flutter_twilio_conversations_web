@@ -1,4 +1,4 @@
-part of flutter_twilio_conversations;
+part of flutter_twilio_conversations_platform_interface;
 
 /// Contains channel information.
 ///
@@ -51,10 +51,10 @@ class ChannelDescriptor {
   /// Get the current user's participation status on this channel.
   ///
   /// Since for [ChannelDescriptor]s the status is unknown this function will always return [ChannelStatus.UNKNOWN].
-  // Future<ChannelStatus> get status async {
-  //   var channel = await getChannel();
-  //   return channel!.status!;
-  // }
+  Future<ChannelStatus> get status async {
+    var channel = await getChannel();
+    return channel!.status!;
+  }
 
   /// Get channel create date.
   DateTime get dateCreated {
@@ -82,10 +82,10 @@ class ChannelDescriptor {
   }
 
   /// Get number of unread messages.
-  // Future<int?> get unreadMessagesCount async {
-  //   var channel = await getChannel();
-  //   return channel!.getUnreadMessagesCount();
-  // }
+  Future<int?> get unreadMessagesCount async {
+    var channel = await getChannel();
+    return channel!.getUnreadMessagesCount();
+  }
   //#endregion
 
   ChannelDescriptor(
@@ -107,11 +107,11 @@ class ChannelDescriptor {
 
   //#region Public API methods
   /// Retrieve a full [Channel] object.
-  // Future<Channel?> getChannel() async {
-  //   var channel =
-  //       await TwilioConversationsClient.chatClient?.channels?.getChannel(_sid);
-  //   return channel;
-  // }
+  Future<Channel?> getChannel() async {
+    var channel =
+        await TwilioConversationsClient.chatClient?.channels?.getChannel(_sid);
+    return channel;
+  }
   //#endregion
 
   /// Update properties from a map.

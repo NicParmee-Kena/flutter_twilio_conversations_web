@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:flutter_twilio_conversations/flutter_twilio_conversations.dart';
+import 'package:flutter_twilio_conversations_platform_interface/flutter_twilio_conversations_platform_interface.dart';
 
 class GetConversationMessagesAction {
   final Channel channel;
