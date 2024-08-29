@@ -15,12 +15,12 @@ dependencies:
     git:
       url: https://github.com/NicParmee-Kena/flutter_twilio_conversations_web.git
       path: flutter_twilio_conversations_platform_interface
-      ref: 6f60a4a96dc3da778a234f55b3983ba5bcea978e
+      ref: a7d7963f90d1a947a636e2e9e83fb87ce417f95a
   flutter_twilio_conversations_web:
     git:
       url: https://github.com/NicParmee-Kena/flutter_twilio_conversations_web.git
       path: flutter_twilio_conversations_web
-      ref: 6f60a4a96dc3da778a234f55b3983ba5bcea978e
+      ref: a7d7963f90d1a947a636e2e9e83fb87ce417f95a
   enum_to_string: ^2.0.1
   intl: ^0.19.0
 
