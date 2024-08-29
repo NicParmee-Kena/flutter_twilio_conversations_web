@@ -78,10 +78,12 @@ packages:
   flutter_twilio_conversations_platform_interface:
     dependency: "direct main"
     description:
-      path: "../flutter_twilio_conversations_platform_interface"
-      relative: true
-    source: path
-    version: "2.0.2"
+      path: flutter_twilio_conversations_platform_interface
+      ref: HEAD
+      resolved-ref: "9d2f119b99c70c04bc5d5204d90ed8a56cabca73"
+      url: "https://github.com/NicParmee-Kena/flutter_twilio_conversations_web.git"
+    source: git
+    version: "2.0.6"
   flutter_web_plugins:
     dependency: "direct main"
     description: flutter
