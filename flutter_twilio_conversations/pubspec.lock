@@ -86,19 +86,21 @@ packages:
   flutter_twilio_conversations_platform_interface:
     dependency: "direct main"
     description:
-      name: flutter_twilio_conversations_platform_interface
-      sha256: f2e61066db7e34d45179baca2c0c4a16a06697490f1e08fe73e7f0562c7d1ac8
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.0.5"
+      path: flutter_twilio_conversations_platform_interface
+      ref: "temp/fixes"
+      resolved-ref: "8a90d1c854507fae438967f8cf752cffcbdad701"
+      url: "https://github.com/NicParmee-Kena/flutter_twilio_conversations_web.git"
+    source: git
+    version: "2.0.6"
   flutter_twilio_conversations_web:
     dependency: "direct main"
     description:
-      name: flutter_twilio_conversations_web
-      sha256: a70002bcb69e426ed6d0c3c7890b6d2337af118ddb8ae9c9daa20d1028d69d94
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.0.5"
+      path: flutter_twilio_conversations_web
+      ref: "temp/fixes"
+      resolved-ref: "8a90d1c854507fae438967f8cf752cffcbdad701"
+      url: "https://github.com/NicParmee-Kena/flutter_twilio_conversations_web.git"
+    source: git
+    version: "2.0.6"
   flutter_web_plugins:
     dependency: transitive
     description: flutter
